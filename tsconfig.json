@@ -15,9 +15,12 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
-    }
+      "@/*": ["./src/*"],
+      "pages/*": ["./src/pages/*"]
+    },
+    "baseUrl": ".",
+    "types": ["jest", "testing-library__jest-dom"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/**/*"],
+  "exclude": ["node_modules", "build", ".next", "coverage", "test/**/*"]
 }

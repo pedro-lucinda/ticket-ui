@@ -1,0 +1,18 @@
+.env
+.env.local
+.env.production
+.env.production.local
+**/*/.env.production
+**/*/.env.production.local
+**/*/.env.local
+
+**/*/.js
+
+# ignore storybook files
+.storybook
+**/*/.stories
+
+# ignore test files
+**/*/.test
+**/*/.spec
+**/*/.e2e

@@ -5,5 +5,10 @@
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#5D0F0B",
+    "titleBar.activeBackground": "#82150F",
+    "titleBar.activeForeground": "#FFFCFB"
+  }
 }
