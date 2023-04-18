@@ -10,9 +10,7 @@ export const metadata = {
 export default function Home() {
   return (
     <div>
-      <h1>
-        <Button label="Click" />
-      </h1>
+      <Button label="Click" />
     </div>
   )
 }
