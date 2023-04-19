@@ -6,6 +6,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   onClick?: () => void
   label: string
+  size?: 'sm' | 'md' | 'lg'
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -13,6 +14,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   onClick,
   label,
+  size = 'md',
   ...rest
 }) => {
   const buttonClasses = classNames(
@@ -22,6 +24,9 @@ const Button: React.FC<ButtonProps> = ({
         variant === 'primary',
       'bg-gray-300 hover:bg-gray-400 text-black focus:ring-gray-300':
         variant === 'secondary',
+      'max-w-[100px]': size === 'sm',
+      'max-w-[200px]': size === 'md',
+      'max-w-lg': size === 'lg',
     },
     className,
   )

@@ -1,4 +1,4 @@
-import Button from '@/components/elements/button'
+import { HomeView } from '@/views/home'
 
 export const metadata = {
   title: 'Home',
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <div>
-      <Button label="Click" />
-    </div>
+    <>
+      <HomeView />
+    </>
   )
 }
