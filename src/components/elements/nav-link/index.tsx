@@ -10,7 +10,7 @@ export const NavLink = ({ title, onClick }: NavLinkProps) => {
   return (
     <p
       onClick={onClick}
-      className="font-bold text-white capitalize text-sm hover:scale-[95%] transition-all duration-200"
+      className="font-bold text-white capitalize text-sm hover:scale-[95%] transition-all duration-200 cursor-pointer"
     >
       {title}
     </p>

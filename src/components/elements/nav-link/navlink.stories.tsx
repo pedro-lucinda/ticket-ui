@@ -3,7 +3,7 @@ import React from 'react'
 import { NavLink, NavLinkProps } from '.'
 
 export default {
-  title: 'Example/NavLink',
+  title: 'Components/NavLink',
   component: NavLink,
   argTypes: {
     title: {

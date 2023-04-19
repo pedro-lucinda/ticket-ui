@@ -1,54 +1,38 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "app/*": [
-        "./src/app/*"
-      ]
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "incremental": true,
+        "paths": {
+            "@/*": ["./src/*"],
+            "app/*": ["./src/app/*"],
+            "@/root/*": ["."]
+        },
+        "baseUrl": ".",
+        "types": ["jest", "testing-library__jest-dom"],
+        "plugins": [
+            {
+                "name": "next"
+            }
+        ]
     },
-    "baseUrl": ".",
-    "types": [
-      "jest",
-      "testing-library__jest-dom"
+    "include": [
+        "next-env.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "src/**/*",
+        ".next/types/**/*.ts"
     ],
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
-  },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/**/*",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "build",
-    ".next",
-    "coverage",
-    "test/**/*"
-  ]
+    "exclude": ["node_modules", "build", ".next", "coverage", "test/**/*"]
 }
