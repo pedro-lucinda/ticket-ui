@@ -11,12 +11,12 @@ const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  variant: 'primary',
+  variant: 'purple',
   label: 'Click me!',
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
-  variant: 'secondary',
+  variant: 'outline',
   label: 'Click me!',
 }
