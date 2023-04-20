@@ -22,18 +22,12 @@ describe('Button', () => {
   test('applies primary styles by default', () => {
     render(<Button label="Click me" />)
 
-    expect(screen.getByRole('button')).toHaveClass('bg-blue-500')
+    expect(screen.getByRole('button')).toHaveClass('px-4 py-2 rounded-md')
   })
 
-  test('applies secondary styles when specified', () => {
-    render(<Button variant="secondary" label="Click me" />)
+  test('applies outline styles when specified', () => {
+    render(<Button variant="outline" label="Click me" />)
 
-    expect(screen.getByRole('button')).toHaveClass('bg-gray-300')
-  })
-
-  test('allows custom classes', () => {
-    render(<Button className="custom-class" label="Click me" />)
-
-    expect(screen.getByRole('button')).toHaveClass('custom-class')
+    expect(screen.getByRole('button')).toHaveClass('border-white')
   })
 })

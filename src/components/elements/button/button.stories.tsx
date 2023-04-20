@@ -3,7 +3,7 @@ import React from 'react'
 import Button, { ButtonProps } from '.'
 
 export default {
-  title: 'Components/Button',
+  title: 'Elements/Button',
   component: Button,
 } as Meta
 
@@ -11,12 +11,18 @@ const Template: StoryFn<ButtonProps> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  variant: 'primary',
+  variant: 'purple',
   label: 'Click me!',
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
-  variant: 'secondary',
+  variant: 'outline',
+  label: 'Click me!',
+}
+
+export const Tertiary = Template.bind({})
+Tertiary.args = {
+  variant: 'outlinePurple',
   label: 'Click me!',
 }
