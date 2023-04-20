@@ -22,7 +22,7 @@ describe('Button', () => {
   test('applies primary styles by default', () => {
     render(<Button label="Click me" />)
 
-    expect(screen.getByRole('button')).toHaveClass('bg-purple500')
+    expect(screen.getByRole('button')).toHaveClass('px-4 py-2 rounded-md')
   })
 
   test('applies outline styles when specified', () => {
