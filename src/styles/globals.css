@@ -16,6 +16,12 @@
   }
 }
 
+@layer utilities {
+  .max-screen-size {
+    @apply max-w-[1440px];
+  }
+}
+
 body {
-  font: 10px;
+  @apply bg-purple100 min-h-screen flex flex-col;
 }

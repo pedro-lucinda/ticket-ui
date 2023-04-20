@@ -1,11 +1,11 @@
-'use client'
-import { toast } from 'react-toastify'
-import Button from '@/components/elements/button'
+import { EventList } from './components/event-list'
+import { HomeHeader } from './components/header'
 
 export const HomeView = () => {
   return (
-    <>
-      <Button label="Click" onClick={() => toast.success('hello')} />
-    </>
+    <div className="flex flex-col items-center">
+      <HomeHeader />
+      <EventList showAll={false} numberOfEventsToDisplay={8} />
+    </div>
   )
 }
