@@ -11,8 +11,4 @@ export const NAV_LINKS = [
     label: 'Tickets',
     path: '/tickets',
   },
-  {
-    label: 'Contact',
-    path: '/contact',
-  },
 ]
