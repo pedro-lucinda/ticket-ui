@@ -3,7 +3,7 @@ import React from 'react'
 import Button, { ButtonProps } from '.'
 
 export default {
-  title: 'Components/Button',
+  title: 'Elements/Button',
   component: Button,
 } as Meta
 
@@ -18,5 +18,11 @@ Primary.args = {
 export const Secondary = Template.bind({})
 Secondary.args = {
   variant: 'outline',
+  label: 'Click me!',
+}
+
+export const Tertiary = Template.bind({})
+Tertiary.args = {
+  variant: 'outlinePurple',
   label: 'Click me!',
 }

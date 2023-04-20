@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import '../styles/globals.css'
+import { Footer } from '@/components/modules/footer'
 import { NavBar } from '@/components/modules/nav'
 import Providers from '@/config/provider'
 import 'react-toastify/dist/ReactToastify.css'
@@ -18,9 +19,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <Providers>
           <NavBar />
-          <main className="p-5 flex flex-col min-w-view min-h-view">
+          <main className=" flex flex-col min-w-view min-h-view">
             {children}{' '}
           </main>
+          <Footer />
         </Providers>
         <ToastWrapper />
       </body>

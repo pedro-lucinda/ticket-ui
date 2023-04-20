@@ -9,15 +9,19 @@ module.exports = {
     extend: {
       backgroundImage: {
         purpleGradient:
-          'linear-gradient(118.98deg, #1F063E -2.11%, rgba(31, 6, 62, 0.56) 61.87%)',
+          'linear-gradient(181.91deg, #1F063E 8.55%, #1F063E 8.57%, rgba(31, 6, 62, 0) 207.98%)',
+
+        'home-hero': "url('/assets/images/home-header-bg.png')",
       },
     },
     colors: {
+      purple100: '#f5f5ff',
       purple500: '#9563FF',
       purple600: '#7049C5',
       purple900: '#1F063E',
       gray300: '#EEEEEE',
       white: '#FFFFFF',
+      black: '#000000',
     },
 
     fontFamily: {
@@ -27,6 +31,7 @@ module.exports = {
     },
 
     fontSize: {
+      '2xs': '10px',
       xs: '14px',
       sm: '16px',
       md: '18px',
