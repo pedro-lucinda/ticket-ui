@@ -2,7 +2,7 @@ import classNames from 'classnames'
 import React from 'react'
 
 export type ISpinnerSize = 'sm' | 'md' | 'lg'
-export type ISpinnerColor = 'purple'
+export type ISpinnerColor = 'purple' | 'white'
 
 export type SpinnerProps = {
   size?: ISpinnerSize
@@ -21,6 +21,7 @@ export const Spinner = ({ size = 'sm', color = 'purple' }: SpinnerProps) => {
             'w-6 h-6': size === 'md',
             'w-8 h-8': size === 'lg',
             'fill-purple500': color === 'purple',
+            'fill-white': color === 'white',
           },
         )}
         viewBox="0 0 100 101"

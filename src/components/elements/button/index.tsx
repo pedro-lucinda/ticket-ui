@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import React, { ButtonHTMLAttributes } from 'react'
+import { Spinner } from '../spinner'
 
 type IVariants = 'purple' | 'outline' | 'outlinePurple'
 type ISizes = 'sm' | 'md' | 'lg'
@@ -10,6 +11,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   label: string
   size?: ISizes
   className?: string
+  isLoading?: boolean
 }
 
 const Button = ({
@@ -18,10 +20,11 @@ const Button = ({
   label,
   size = 'md',
   className,
+  isLoading,
   ...rest
 }: ButtonProps) => {
   const buttonClasses = classNames(
-    'px-4 py-2 rounded-md font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50',
+    'px-4 py-2 rounded-md font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 flex items-center gap-2 justify-center',
     className,
     {
       'text-white bg-purple500 hover:bg-purple600 focus:ring-purple500':
@@ -38,7 +41,7 @@ const Button = ({
 
   return (
     <button type="button" className={buttonClasses} onClick={onClick} {...rest}>
-      {label}
+      {label} {!!isLoading && <Spinner color="white" />}
     </button>
   )
 }
