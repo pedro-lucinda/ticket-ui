@@ -1,4 +1,5 @@
-import { useMemo } from 'react'
+import { Suspense, useMemo } from 'react'
+import { LoadingComponent } from '@/components/modules/loading'
 import { useEventStore } from '@/store'
 import { TicketView } from '@/views/tickets/ticket'
 
@@ -15,7 +16,13 @@ export async function generateMetadata({ params }: ITicketProps) {
 export default function Ticket({ params }: ITicketProps) {
   const { id } = params
   const events = useEventStore.getState().events
-  const event = useMemo(() => events?.find((e) => e.id === id), [])
+  const event = useMemo(() => events?.find((e) => e.id === id), [events, id])
 
-  return <>{event && <TicketView id={id} event={event} />}</>
+  return (
+    <>
+      <Suspense fallback={<LoadingComponent />}>
+        {event && <TicketView id={id} event={event} />}
+      </Suspense>
+    </>
+  )
 }

@@ -18,11 +18,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head />
       <body>
         <Providers>
-          <NavBar />
-          <main className=" flex flex-col min-w-view min-h-view">
-            {children}{' '}
-          </main>
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <NavBar />
+            <main className=" flex flex-col min-w-view min-h-view">
+              {children}{' '}
+            </main>
+            <Footer />
+          </div>
         </Providers>
         <ToastWrapper />
       </body>

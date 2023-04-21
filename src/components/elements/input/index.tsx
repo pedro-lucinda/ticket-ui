@@ -1,23 +1,20 @@
 'use client'
+import classNames from 'classnames'
 import React, { ChangeEvent, InputHTMLAttributes } from 'react'
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string
   id: string
-  handleChange?: (value: string) => void
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const Input = ({
   label,
   id,
-  handleChange,
   className,
+  onChange,
   ...props
 }: InputProps) => {
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    if (handleChange) handleChange(event.target.value)
-  }
-
   return (
     <div className="flex flex-col gap-1">
       {label && (
@@ -26,10 +23,15 @@ export const Input = ({
         </label>
       )}
       <input
-        {...props}
         id={id}
-        onChange={handleInputChange}
-        className={`bg-gray300 text-black text-sm p-2 rounded-md focus:outline-none focus:border-purple500 ${className}`}
+        className={classNames(
+          'bg-gray300 text-black text-sm p-2 rounded-md focus:outline-none focus:border-purple500',
+          {
+            className: className,
+          },
+        )}
+        onChange={onChange}
+        {...props}
       />
     </div>
   )
