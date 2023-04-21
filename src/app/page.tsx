@@ -2,15 +2,11 @@ import { HomeView } from '@/views/home'
 
 export const metadata = {
   title: 'Home',
-  description: 'Dashboard description',
-  keywords: 'dashboard, next, react',
-  robots: 'index, follow',
+  description: 'Find tickets',
+  keywords: 'Tickets, next, react',
+  robots: 'index',
 }
 
 export default function Home() {
-  return (
-    <>
-      <HomeView />
-    </>
-  )
+  return <HomeView />
 }
