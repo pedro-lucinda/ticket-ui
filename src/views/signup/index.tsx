@@ -70,7 +70,7 @@ export const SignupView = () => {
         />
       </section>
       <Button
-        label="Login"
+        label="Signup"
         size="sm"
         className="w-[200px]"
         onClick={handleSignup}
