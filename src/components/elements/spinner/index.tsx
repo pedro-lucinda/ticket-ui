@@ -11,9 +11,11 @@ export type SpinnerProps = {
 
 export const Spinner = ({ size = 'sm', color = 'purple' }: SpinnerProps) => {
   return (
-    <div role="status">
+    <div role="spinner">
       <svg
+        role="img"
         aria-hidden="true"
+        aria-label="Loading spinner"
         className={classNames(
           'inline mr-2 text-gray300 animate-spin dark:text-gray300 ',
           {

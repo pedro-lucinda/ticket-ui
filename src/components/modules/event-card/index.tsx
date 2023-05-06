@@ -11,6 +11,7 @@ export const EventCard = ({ id, date, description, image, title }: IEvent) => {
 
   return (
     <div
+      role="link"
       onClick={() => router.push(`/tickets/${id}`)}
       className="flex flex-col items-center rounded-2xl w-[300px] h-[360px] md:w-[340px] md:h-[340px] bg-white cursor-pointer hover:scale-95 hover:shadow-sm transition-all duration-200"
     >
