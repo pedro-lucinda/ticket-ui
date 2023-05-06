@@ -8,7 +8,7 @@ export type IDescriptionItemProps = {
 export const DescriptionItem = ({ label, content }: IDescriptionItemProps) => {
   return (
     <div className="flex md:gap-5 gap-1 max-md:flex-wrap">
-      <p className="font-bold text-sm capitalize">{label}:</p>
+      <label className="font-bold text-sm capitalize">{label}:</label>
       <p className="font-medium text-sm">{content}</p>
     </div>
   )

@@ -1,5 +1,4 @@
-/* eslint-disable testing-library/no-wait-for-multiple-assertions */
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import React from 'react'
 import * as nextNavigation from '../../../../__mocks__/next-navigation.mock'
 import { EventCard } from '.'
@@ -23,16 +22,27 @@ describe('EventCard', () => {
     currency: 'USD' as const,
   }
 
-  it('renders the event card correctly', async () => {
+  test('renders the event card correctly', () => {
     render(<EventCard {...mockEvent} />)
 
-    // Wait until the elements appear on the screen
-    await waitFor(() => {
-      expect(screen.getByAltText(mockEvent.title)).toBeInTheDocument()
-      expect(screen.getByText(mockEvent.title)).toBeInTheDocument()
-      expect(screen.getByRole('Month')).toHaveTextContent('APR')
-      expect(screen.getByRole('Day')).toHaveTextContent('19')
-      expect(screen.getByText(mockEvent.description)).toBeInTheDocument()
-    })
+    expect(screen.getByAltText(mockEvent.title)).toBeInTheDocument()
+    expect(screen.getByText(mockEvent.title)).toBeInTheDocument()
+    expect(screen.getByRole('Month')).toHaveTextContent('APR')
+    expect(screen.getByRole('Day')).toHaveTextContent('19')
+    expect(screen.getByText(mockEvent.description)).toBeInTheDocument()
+  })
+
+  test('navigates to the correct route when clicked', async () => {
+    const { useRouter } = nextNavigation
+
+    const mockedPush = jest.fn()
+    useRouter.mockImplementation(() => ({ push: mockedPush }))
+
+    render(<EventCard {...mockEvent} />)
+
+    const cardElement = screen.getByRole('link')
+    fireEvent.click(cardElement)
+
+    expect(mockedPush).toHaveBeenCalledWith(`/tickets/${mockEvent.id}`)
   })
 })

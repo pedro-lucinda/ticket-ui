@@ -1,3 +1,4 @@
+import React from 'react'
 import { LOGO } from '@/constants'
 
 export const Footer = () => {
